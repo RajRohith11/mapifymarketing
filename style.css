@@ -488,4 +488,124 @@ header {
     color: #111111;
     transform: translateY(-3px);
     box-shadow: 0 6px 18px rgba(213, 180, 91, 0.2);
+}/* =================================
+   MAPIFY MARKETING - SERVICES PAGE
+================================= */
+
+.services-hero {
+    padding: 20px 25px;
+    text-align: center;
+    background: #ffffff;
+    color: #171717;
+    border-bottom: 1px solid #eeeeee;
+    position: static;
+}
+
+.services-hero h1 {
+    color: #bd922f;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.services-hero p {
+    color: #666666;
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+.services-hero a {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid #d5b45b;
+    border-radius: 4px;
+    color: #171717;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border-color: #bd922f;
+}
+
+.services-hero a:hover {
+    background: #d5b45b;
+    color: #111111;
+}
+
+.service-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 25px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.service-list .service-card {
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-top: 3px solid #bd922f;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-list .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.service-list .service-card h2 {
+    color: #171717;
+    font-size: 21px;
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.service-list .service-card ul {
+    padding-left: 22px;
+}
+
+.service-list .service-card li {
+    color: #666666;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 7px;
+}
+
+.service-list .service-card li::marker {
+    color: #bd922f;
+}
+
+/* Services page on mobile */
+@media (max-width: 768px) {
+    .services-hero {
+        padding: 55px 20px;
+    }
+
+    .services-hero p {
+        font-size: 15px;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .service-list .service-card {
+        padding: 25px 22px;
+    }
+
+    .service-list .service-card h2 {
+        font-size: 19px;
+    }
+}
+/* Sticky navigation on all pages */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    width: 100%;
 }

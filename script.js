@@ -1,11 +1,11 @@
+
 /* =================================
    MAPIFY MARKETING - JAVASCRIPT
 ================================= */
 
-// 1. INTRO LOADING SCREEN
 
+/* 1. START AT THE TOP WHEN THE PAGE LOADS */
 
-/* Start at the top whenever the page loads */
 if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
 }
@@ -14,6 +14,9 @@ window.addEventListener("load", function () {
     window.scrollTo(0, 0);
 });
 
+
+/* 2. INTRO LOADING SCREEN */
+
 window.addEventListener("load", function () {
     const introLoader = document.getElementById("introLoader");
 
@@ -21,19 +24,30 @@ window.addEventListener("load", function () {
         return;
     }
 
-    // Keep the intro visible for 2.5 seconds
+    // Check if the intro already played in this tab session
+    if (sessionStorage.getItem("mapifyIntroPlayed") === "true") {
+        introLoader.remove();
+        return;
+    }
+
+    // Remember that the intro has played
+    sessionStorage.setItem("mapifyIntroPlayed", "true");
+
+    // Show the intro for 2.5 seconds
     setTimeout(function () {
         introLoader.classList.add("hide-intro");
 
-        // Remove the intro after the fade-out animation
+        // Remove the intro after the fade animation
         setTimeout(function () {
             introLoader.remove();
         }, 650);
+
     }, 2500);
 });
 
 
-// 2. SMOOTH SCROLL TO THE SERVICES SECTION
+/* 3. SMOOTH SCROLL TO THE SERVICES SECTION */
+
 const exploreBtn = document.querySelector(
     '.hero-buttons .primary-btn[href="#services"]'
 );
@@ -53,7 +67,8 @@ if (exploreBtn) {
 }
 
 
-// 3. ADD A SHADOW TO THE NAVBAR WHEN SCROLLING
+/* 4. ADD A SHADOW TO THE NAVBAR WHEN SCROLLING */
+
 const navbar = document.querySelector("header");
 
 window.addEventListener("scroll", function () {
@@ -68,6 +83,7 @@ window.addEventListener("scroll", function () {
 });
 
 
-// 4. WELCOME MESSAGE
+/* 5. WELCOME MESSAGE */
+
 console.log("Welcome to Mapify Marketing!");
 console.log("Strategy. Creativity. Growth!");

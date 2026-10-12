@@ -734,3 +734,28 @@ a {
         transition-duration: 0.01ms !important;
     }
 }
+/* SOCIAL MEDIA CONTACTS */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-links a {
+    color: #d4af37;
+    text-decoration: none;
+    border: 1px solid #d4af37;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #d4af37;
+    color: #000;
+    transform: translateY(-3px);
+}

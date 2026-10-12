@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Mapify Marketing</title>
+
+    <meta
+        name="description"
+        content="Contact Mapify Marketing for digital marketing, branding, web development, and creative business solutions."
+    >
+
+    <meta name="theme-color" content="#111111">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =================================
+           CONTACT PAGE CONTENT
+           Existing navbar and footer styles
+           remain in style.css
+        ================================= */
+
+        .contact-page {
+            padding: 80px 8%;
+            background: #111111;
+            color: #ffffff;
+        }
+
+        .contact-page-heading {
+            max-width: 800px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .contact-page-heading .section-tag {
+            color: #d4af37;
+        }
+
+        .contact-page-heading h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin: 15px 0;
+        }
+
+        .contact-page-heading h1 span {
+            color: #d4af37;
+        }
+
+        .contact-page-heading p {
+            color: #cccccc;
+            line-height: 1.8;
+        }
+
+        .contact-cards {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: #181818;
+            border: 1px solid rgba(212, 175, 55, 0.55);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease,
+                        border-color 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .contact-card h2 {
+            color: #d4af37;
+            font-size: 1.25rem;
+            margin: 0 0 14px;
+        }
+
+        .contact-card p {
+            color: #dddddd;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-action {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 11px 18px;
+            border: 1px solid #d4af37;
+            border-radius: 6px;
+            color: #d4af37 !important;
+            text-decoration: none !important;
+            font-weight: 600;
+            transition: background 0.3s ease,
+                        color 0.3s ease;
+        }
+
+        .contact-action:hover {
+            background: #d4af37;
+            color: #111111 !important;
+        }
+
+        .contact-social-section {
+            max-width: 900px;
+            margin: 55px auto 0;
+            text-align: center;
+        }
+
+        .contact-social-section h2 {
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .contact-social-section p {
+            color: #cccccc;
+            line-height: 1.8;
+        }
+
+        .contact-social-section .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .contact-social-section .social-links a {
+            display: inline-block;
+            padding: 11px 20px;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.3s ease,
+                        color 0.3s ease;
+        }
+
+        .contact-social-section .social-links a:hover {
+            background: #d4af37;
+            color: #111111;
+        }
+
+        .contact-cta {
+            margin-top: 55px;
+            padding: 35px 20px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            background: #181818;
+        }
+
+        .contact-cta h2 {
+            margin-bottom: 12px;
+        }
+
+        .contact-cta p {
+            color: #cccccc;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .contact-page {
+                padding: 55px 6%;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- INTRO LOADER: SAME AS INDEX.HTML -->
+    <div class="intro-loader" id="introLoader">
+        <img
+            src="mapify-logo.png.PNG"
+            alt="Mapify Marketing Logo"
+            class="intro-logo"
+        >
+
+        <p class="intro-tagline">Strategy. Creativity. Growth.</p>
+
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION: SAME STRUCTURE AS INDEX.HTML -->
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a href="index.html" class="logo"
+               aria-label="Mapify Marketing Home">
+                <img
+                    src="mapify-logo.png.PNG"
+                    alt="Mapify Marketing Logo"
+                >
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- CONTACT PAGE INTRO -->
+        <section class="contact-page">
+
+            <div class="contact-page-heading">
+
+                <p class="section-tag">LET'S CONNECT</p>
+
+                <h1>
+                    Let's Build Something
+                    <span>Amazing.</span>
+                </h1>
+
+                <p>
+                    Have an idea, a project, or a business you want
+                    to grow? We'd love to hear from you. Reach out
+                    to Mapify Marketing and let's discuss your goals.
+                </p>
+
+            </div>
+
+            <!-- CONTACT INFORMATION -->
+            <div class="contact-cards">
+
+                <!-- WHATSAPP CONTACT 1 -->
+                <article class="contact-card">
+
+                    <h2>WhatsApp Contact 1</h2>
+
+                    <p>+91 93632 85828</p>
+
+                    <p>
+                        Contact us to discuss your project and
+                        business requirements.
+                    </p>
+
+                    <a
+                        class="contact-action"
+                        href="https://wa.me/919363285828"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Chat on WhatsApp ↗
+                    </a>
+
+                </article>
+
+                <!-- WHATSAPP CONTACT 2 -->
+                <article class="contact-card">
+
+                    <h2>WhatsApp Contact 2</h2>
+
+                    <p>+91 93448 17160</p>
+
+                    <p>
+                        Get in touch with our team for enquiries
+                        and project discussions.
+                    </p>
+
+                    <a
+                        class="contact-action"
+                        href="https://wa.me/919344817160"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Chat on WhatsApp ↗
+                    </a>
+
+                </article>
+
+                <!-- INSTAGRAM DM -->
+                <article class="contact-card">
+
+                    <h2>Instagram Direct Message</h2>
+
+                    <p>@mapify_marketing</p>
+
+                    <p>
+                        Send us a message on Instagram to connect
+                        with Mapify Marketing.
+                    </p>
+
+                    <a
+                        class="contact-action"
+                        href="https://ig.me/m/mapify_marketing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Message Us ↗
+                    </a>
+
+                </article>
+
+                <!-- OFFICE LOCATION -->
+                <article class="contact-card">
+
+                    <h2>Visit Our Location</h2>
+
+                    <p>
+                        Find our office using our Google Maps link.
+                    </p>
+
+                    <a
+                        class="contact-action"
+                        href="https://maps.app.goo.gl/AwxxPknVx2vCqQ6E8?g_st=iw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Get Directions ↗
+                    </a>
+
+                </article>
+
+            </div>
+
+            <!-- SOCIAL MEDIA -->
+            <section class="contact-social-section">
+
+                <h2>Connect With Mapify Marketing</h2>
+
+                <p>
+                    Follow our social media pages and stay
+                    connected with our latest work and updates.
+                </p>
+
+                <div class="social-links">
+
+                    <a
+                        href="https://www.linkedin.com/in/mapify-marketing-66b75b375/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn ↗
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/mapify_marketing?mdxt=MWo4dm42b2thdWhscA=="
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Instagram ↗
+                    </a>
+
+                    <a
+                        href="https://www.facebook.com/share/1EtXRfkXgf/?mibextid=wwXIfr"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Facebook ↗
+                    </a>
+
+                </div>
+
+            </section>
+
+            <!-- CONTACT CALL TO ACTION -->
+            <section class="contact-cta">
+
+                <h2>Ready to Grow Your Brand?</h2>
+
+                <p>
+                    Tell us about your ideas, and let's explore
+                    how we can help your business move forward.
+                </p>
+
+                <a
+                    href="https://ig.me/m/mapify_marketing"
+                    class="primary-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Get in Touch ↗
+                </a>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER: SAME STRUCTURE AND CONTENT AS INDEX.HTML -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- COMPANY INFORMATION -->
+            <div class="footer-column company">
+
+                <a href="index.html" class="footer-brand">
+
+                    <img
+                        src="mapify-logo.png.PNG"
+                        alt="Mapify Marketing Logo"
+                        class="footer-logo"
+                    >
+
+                    <span>MAPIFY MARKETING</span>
+
+                </a>
+
+                <p>
+                    Mapify Marketing helps businesses build a
+                    strong digital presence through creative
+                    strategies, powerful branding, and modern
+                    digital solutions.
+                </p>
+
+                <p class="footer-tagline">
+                    Strategy. Creativity. Growth.
+                </p>
+
+            </div>
+
+            <!-- USEFUL LINKS -->
+            <div class="footer-column">
+
+                <h3>Useful Links</h3>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+            </div>
+
+            <!-- SERVICES -->
+            <div class="footer-column">
+
+                <h3>Our Services</h3>
+
+                <ul>
+                    <li><a href="services.html">Social Media Management</a></li>
+                    <li><a href="services.html">Reels &amp; Video Production</a></li>
+                    <li><a href="services.html">Meta &amp; Google Ads</a></li>
+                    <li><a href="services.html">Creative Design &amp; Branding</a></li>
+                </ul>
+
+            </div>
+
+            <!-- MORE SERVICES -->
+            <div class="footer-column">
+
+                <h3>More Services</h3>
+
+                <ul>
+                    <li><a href="services.html">Website Development</a></li>
+                    <li><a href="services.html">Google Business &amp; Local SEO</a></li>
+                    <li><a href="services.html">Lead Generation</a></li>
+                    <li><a href="services.html">Marketing Strategy</a></li>
+                </ul>
+
+            </div>
+
+            <!-- CONTACT DETAILS -->
+            <div class="footer-column contact">
+
+                <h3>Contact Details</h3>
+
+                <p>
+                    <span class="contact-icon" aria-hidden="true">☎</span>
+                    <a
+                        href="https://wa.me/919363285828"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        +91 93632 85828
+                    </a>
+                </p>
+
+                <p>
+                    <span class="contact-icon" aria-hidden="true">☎</span>
+                    <a
+                        href="https://wa.me/919344817160"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        +91 93448 17160
+                    </a>
+                </p>
+
+                <p>
+                    <span class="contact-icon" aria-hidden="true">⌖</span>
+                    <a
+                        href="https://maps.app.goo.gl/AwxxPknVx2vCqQ6E8?g_st=iw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Visit Our Location
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- SOCIAL MEDIA CONTACTS -->
+        <div class="social-links">
+
+            <a
+                href="https://www.linkedin.com/in/mapify-marketing-66b75b375/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+            <a
+                href="https://www.instagram.com/mapify_marketing?mdxt=MWo4dm42b2thdWhscA=="
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Instagram
+            </a>
+
+            <a
+                href="https://www.facebook.com/share/1EtXRfkXgf/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Facebook
+            </a>
+
+        </div>
+
+        <!-- POPULAR SERVICES -->
+        <div class="popular-searches">
+
+            <h3>Our Expertise</h3>
+
+            <p>
+                Digital Marketing | Social Media Management |
+                Reels &amp; Video Production | Meta Ads |
+                Google Ads | Branding &amp; Design |
+                Website Development | Local SEO |
+                Lead Generation | Marketing Strategy
+            </p>
+
+        </div>
+
+        <!-- FOOTER BOTTOM -->
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 Mapify Marketing. All rights reserved.
+            </p>
+
+            <p class="footer-bottom-tagline">
+                Strategy. Creativity. Growth.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- EXISTING WEBSITE JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>

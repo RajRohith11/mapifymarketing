@@ -1,11 +1,10 @@
 
 /* =================================
-   MAPIFY MARKETING - BRAND STYLES
-   Colors: Black, Gold & White
+   MAPIFY MARKETING - MAIN STYLES
+   Brand: Black, White & Gold
 ================================= */
 
 /* 1. RESET */
-
 
 * {
     margin: 0;
@@ -15,7 +14,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 110px;
 }
 
 body {
@@ -29,20 +28,23 @@ a {
     text-decoration: none;
 }
 
-/* 2. NAVIGATION BAR */
-header {
-    background: #ffffff;
+/* 2. NAVIGATION */
+
+.site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    background: #ffffff;
     border-bottom: 1px solid #eeeeee;
+    transition: box-shadow 0.3s ease;
 }
 
 .navbar {
+    width: 100%;
     max-width: 1250px;
+    min-height: 90px;
     margin: auto;
     padding: 12px 30px;
-    min-height: 90px;
 
     display: flex;
     align-items: center;
@@ -53,6 +55,7 @@ header {
 .logo {
     display: inline-flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo img {
@@ -64,6 +67,7 @@ header {
 .nav-links {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 32px;
     list-style: none;
 }
@@ -75,11 +79,13 @@ header {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
     color: #bd922f;
 }
 
-/* 3. HERO SECTION */
+/* 3. HOMEPAGE HERO */
+
 .hero {
     min-height: 620px;
     padding: 100px 25px;
@@ -95,21 +101,21 @@ header {
 
 .hero-tag,
 .section-tag {
+    margin-bottom: 22px;
     color: #bd922f;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 3px;
-    margin-bottom: 22px;
 }
 
 .hero h1 {
     max-width: 900px;
+    margin-bottom: 25px;
+    color: #111111;
     font-size: clamp(38px, 6vw, 72px);
     line-height: 1.15;
     font-weight: 800;
     letter-spacing: -2px;
-    margin-bottom: 25px;
-    color: #111111;
 }
 
 .hero h1 span {
@@ -119,19 +125,20 @@ header {
 
 .hero-description {
     max-width: 620px;
+    margin-bottom: 35px;
     color: #666666;
     font-size: 17px;
     line-height: 1.9;
-    margin-bottom: 35px;
 }
 
 /* 4. BUTTONS */
+
 .hero-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
     flex-wrap: wrap;
+    gap: 16px;
 }
 
 .primary-btn,
@@ -142,6 +149,7 @@ header {
     border-radius: 4px;
     font-size: 14px;
     font-weight: 700;
+    text-align: center;
     transition: all 0.3s ease;
 }
 
@@ -170,18 +178,19 @@ header {
 }
 
 /* 5. GENERAL CONTENT SECTIONS */
+
 .content-section {
-    padding: 100px 30px;
-    text-align: center;
     max-width: 1150px;
     margin: auto;
+    padding: 100px 30px;
+    text-align: center;
 }
 
 .content-section h2 {
-    font-size: clamp(30px, 4vw, 46px);
-    line-height: 1.2;
     margin-bottom: 25px;
     color: #111111;
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
 }
 
 .content-section > p:not(.section-tag) {
@@ -192,41 +201,44 @@ header {
     line-height: 1.9;
 }
 
-/* 6. SERVICES */
+/* 6. HOMEPAGE SERVICES */
+
 .services-section {
     max-width: none;
     background: #fafafa;
 }
 
 .service-container {
-    max-width: 1100px;
-    margin: 50px auto 0;
-
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
+
+    max-width: 1100px;
+    margin: 50px auto 0;
     text-align: left;
 }
 
 .service-card {
+    padding: 35px 28px;
     background: #ffffff;
     border: 1px solid #eeeeee;
     border-top: 3px solid #bd922f;
     border-radius: 6px;
-    padding: 35px 28px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-7px);
+    transform: translateY(-5px);
     border-color: #bd922f;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
 }
 
 .service-card h3 {
+    margin-bottom: 15px;
     color: #171717;
     font-size: 21px;
-    margin-bottom: 15px;
 }
 
 .service-card p {
@@ -235,7 +247,12 @@ header {
     line-height: 1.8;
 }
 
-/* 7. CONTACT */
+.services-cta {
+    margin-top: 35px;
+}
+
+/* 7. CONTACT SECTION */
+
 .contact-section {
     padding-top: 110px;
     padding-bottom: 110px;
@@ -245,149 +262,243 @@ header {
     margin-top: 15px;
 }
 
-/* 8. FOOTER */
-.footer {
-    padding: 30px 20px;
-    background: #111111;
-    color: #ffffff;
+/* 8. SERVICES PAGE HERO */
+
+.services-hero {
+    padding: 65px 25px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
     text-align: center;
 }
 
-.footer p {
-    font-size: 13px;
-    margin: 5px 0;
+.services-hero .section-tag {
+    margin-bottom: 15px;
 }
 
-.footer p:last-child {
+.services-hero h1 {
+    margin-bottom: 15px;
+    color: #bd922f;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.2;
+}
+
+.services-hero p:not(.section-tag) {
+    margin-bottom: 25px;
+    color: #666666;
+    font-size: 17px;
+}
+
+/* 9. FULL SERVICES LIST */
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 65px 25px;
+}
+
+.service-list .service-card {
+    padding: 30px;
+}
+
+.service-list .service-card h2 {
+    margin-bottom: 18px;
+    color: #171717;
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.service-list .service-card ul {
+    padding-left: 22px;
+}
+
+.service-list .service-card li {
+    margin-bottom: 7px;
+    color: #666666;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.service-list .service-card li::marker {
+    color: #bd922f;
+}
+
+/* =================================
+   10. MAPIFY MARKETING FOOTER
+   Existing Black, White & Gold Theme
+================================= */
+
+.footer {
+    padding: 55px 5% 20px;
+    background: #111111;
+    color: #ffffff;
+}
+
+/* Footer columns */
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 2fr 0.9fr 1.2fr 1.2fr 1.4fr;
+    gap: 30px;
+    max-width: 1450px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-column h3 {
+    margin-bottom: 22px;
+    color: #d5b45b;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.footer-column h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* Footer brand */
+
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.footer-logo {
+    display: block;
+    width: 65px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.footer-column p {
+    color: #d2d2d2;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-column.company > p {
+    margin-bottom: 16px;
+}
+
+.footer-column .footer-tagline {
+    color: #d5b45b;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Footer links */
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 10px;
+    color: #d2d2d2;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer a {
+    color: #d2d2d2;
+    overflow-wrap: anywhere;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #d5b45b;
+}
+
+/* Footer contact details */
+
+.footer-column.contact p {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    flex: 0 0 18px;
+    color: #d5b45b;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Footer expertise section */
+
+.popular-searches {
+    max-width: 1450px;
+    margin: 35px auto 0;
+    padding: 22px 0;
+    border-bottom: 1px solid #383838;
+}
+
+.popular-searches h3 {
+    margin-bottom: 12px;
+    color: #d5b45b;
+    font-size: 18px;
+}
+
+.popular-searches p {
+    color: #d2d2d2;
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* Footer copyright */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    max-width: 1450px;
+    margin: 0 auto;
+    padding-top: 22px;
+    color: #c4c4c4;
+    font-size: 12px;
+}
+
+.footer-bottom p {
+    line-height: 1.8;
+}
+
+.footer-bottom .footer-bottom-tagline {
     color: #d5b45b;
     letter-spacing: 1px;
 }
 
-/* 9. TABLET AND MOBILE */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 12px 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .logo img {
-        width: 90px;
-        height: 55px;
-    }
-
-    .nav-links {
-        justify-content: center;
-        gap: 18px;
-        flex-wrap: wrap;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-    }
-
-    .hero {
-        min-height: 540px;
-        padding: 80px 22px;
-    }
-
-    .hero h1 {
-        letter-spacing: -1px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-    .content-section {
-        padding: 75px 22px;
-    }
-
-    .service-container {
-        grid-template-columns: 1fr;
-        max-width: 450px;
-    }
-}
-
-@media (max-width: 400px) {
-    .nav-links {
-        gap: 12px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .hero-buttons a {
-        width: 100%;
-        max-width: 280px;
-    }
-}
-/* WhatsApp Contact Section */
-.whatsapp-contact {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #000;
-    color: #fff;
-}
-
-.whatsapp-contact h2 {
-    color: #d4af37;
-    margin-bottom: 10px;
-}
-
-.contact-numbers {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.contact-numbers a {
-    display: inline-block;
-    padding: 12px 20px;
-    border: 1px solid #d4af37;
-    border-radius: 8px;
-    color: #d4af37;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.contact-numbers a:hover {
-    background-color: #d4af37;
-    color: #000;
-}
-
-@media (max-width: 480px) {
-    .contact-numbers {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-numbers a {
-        width: 100%;
-        max-width: 280px;
-        box-sizing: border-box;
-    }
-}
-/* =================================
-   MAPIFY INTRO LOADING SCREEN
-================================= */
+/* 11. INTRO LOADING SCREEN */
 
 .intro-loader {
     position: fixed;
     inset: 0;
     z-index: 9999;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     background: #111111;
     transition: opacity 0.6s ease, visibility 0.6s ease;
 }
@@ -452,136 +563,74 @@ header {
     }
 }
 
-@media (max-width: 480px) {
-    .intro-logo {
-        width: 150px;
-        height: 100px;
+/* 12. TABLET RESPONSIVENESS */
+
+@media (max-width: 1100px) {
+    .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .intro-tagline {
-        font-size: 11px;
-        letter-spacing: 2px;
+    .footer-column.company {
+        grid-column: 1 / -1;
+    }
+
+    .service-container {
+        gap: 18px;
     }
 }
-/* =================================
-   MAPIFY OFFICE LOCATION LINK
-================================= */
 
-.office-location {
-    margin-top: 18px;
-    text-align: center;
-}
+/* 13. MOBILE RESPONSIVENESS */
 
-.location-link {
-    display: inline-block;
-    padding: 12px 22px;
-    border: 1px solid #d5b45b;
-    border-radius: 6px;
-    color: #d5b45b;
-    font-size: 14px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.location-link:hover {
-    background: #d5b45b;
-    color: #111111;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(213, 180, 91, 0.2);
-}/* =================================
-   MAPIFY MARKETING - SERVICES PAGE
-================================= */
-
-.services-hero {
-    padding: 20px 25px;
-    text-align: center;
-    background: #ffffff;
-    color: #171717;
-    border-bottom: 1px solid #eeeeee;
-    position: static;
-}
-
-.services-hero h1 {
-    color: #bd922f;
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.2;
-    margin-bottom: 15px;
-}
-
-.services-hero p {
-    color: #666666;
-    font-size: 17px;
-    margin-bottom: 25px;
-}
-
-.services-hero a {
-    display: inline-block;
-    padding: 11px 22px;
-    border: 1px solid #d5b45b;
-    border-radius: 4px;
-    color: #171717;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    border-color: #bd922f;
-}
-
-.services-hero a:hover {
-    background: #d5b45b;
-    color: #111111;
-}
-
-.service-list {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 65px 25px;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.service-list .service-card {
-    padding: 30px;
-    background: #ffffff;
-    border: 1px solid #eeeeee;
-    border-top: 3px solid #bd922f;
-    border-radius: 6px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-list .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-}
-
-.service-list .service-card h2 {
-    color: #171717;
-    font-size: 21px;
-    line-height: 1.4;
-    margin-bottom: 18px;
-}
-
-.service-list .service-card ul {
-    padding-left: 22px;
-}
-
-.service-list .service-card li {
-    color: #666666;
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 7px;
-}
-
-.service-list .service-card li::marker {
-    color: #bd922f;
-}
-
-/* Services page on mobile */
 @media (max-width: 768px) {
-    .services-hero {
-        padding: 55px 20px;
+    .navbar {
+        padding: 12px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
     }
 
-    .services-hero p {
+    .logo img {
+        width: 90px;
+        height: 55px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 540px;
+        padding: 80px 22px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .content-section {
+        padding: 75px 22px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+    .services-hero {
+        padding: 50px 20px;
+    }
+
+    .services-hero p:not(.section-tag) {
         font-size: 15px;
     }
 
@@ -599,13 +648,89 @@ header {
     .service-list .service-card h2 {
         font-size: 19px;
     }
+
+    .footer {
+        padding: 40px 6% 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 20px;
+    }
+
+    .footer-column.company,
+    .footer-column.contact {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
 }
-/* Sticky navigation on all pages */
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #ffffff;
-    border-bottom: 1px solid #eeeeee;
-    width: 100%;
+
+/* 14. SMALL MOBILE */
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 10px 13px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .intro-logo {
+        width: 150px;
+        height: 100px;
+    }
+
+    .intro-tagline {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-column.company,
+    .footer-column.contact {
+        grid-column: auto;
+    }
+
+    .footer-brand {
+        font-size: 16px;
+    }
+
+    .footer-bottom {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* 15. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }

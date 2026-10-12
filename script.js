@@ -4,41 +4,34 @@
 ================================= */
 
 
-/* 1. START AT THE TOP WHEN THE PAGE LOADS */
-
-if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-}
-
-window.addEventListener("load", function () {
-    window.scrollTo(0, 0);
-});
-
-
-/* 2. INTRO LOADING SCREEN */
+/* 1. INTRO LOADING SCREEN */
 
 window.addEventListener("load", function () {
     const introLoader = document.getElementById("introLoader");
 
+    // The services page has no intro loader.
     if (!introLoader) {
         return;
     }
 
-    // Check if the intro already played in this tab session
-    if (sessionStorage.getItem("mapifyIntroPlayed") === "true") {
-        introLoader.remove();
-        return;
+    // Prevent the intro from replaying in the same tab session.
+    try {
+        if (sessionStorage.getItem("mapifyIntroPlayed") === "true") {
+            introLoader.remove();
+            return;
+        }
+
+        sessionStorage.setItem("mapifyIntroPlayed", "true");
+    } catch (error) {
+        // Continue normally if session storage is unavailable.
     }
 
-    // Remember that the intro has played
-    sessionStorage.setItem("mapifyIntroPlayed", "true");
-
-    // Show the intro for 2.5 seconds
-    setTimeout(function () {
+    // Show the intro for 2.5 seconds.
+    window.setTimeout(function () {
         introLoader.classList.add("hide-intro");
 
-        // Remove the intro after the fade animation
-        setTimeout(function () {
+        // Remove the loader after its fade animation.
+        window.setTimeout(function () {
             introLoader.remove();
         }, 650);
 
@@ -46,44 +39,33 @@ window.addEventListener("load", function () {
 });
 
 
-/* 3. SMOOTH SCROLL TO THE SERVICES SECTION */
+/* 2. NAVBAR SHADOW ON SCROLL */
 
-const exploreBtn = document.querySelector(
-    '.hero-buttons .primary-btn[href="#services"]'
-);
+const siteHeader = document.querySelector(".site-header");
 
-if (exploreBtn) {
-    exploreBtn.addEventListener("click", function (event) {
-        const servicesSection = document.querySelector("#services");
+function updateNavbarShadow() {
+    if (!siteHeader) {
+        return;
+    }
 
-        if (servicesSection) {
-            event.preventDefault();
-
-            servicesSection.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    });
+    if (window.scrollY > 50) {
+        siteHeader.style.boxShadow =
+            "0 4px 15px rgba(0, 0, 0, 0.08)";
+    } else {
+        siteHeader.style.boxShadow = "none";
+    }
 }
 
-
-/* 4. ADD A SHADOW TO THE NAVBAR WHEN SCROLLING */
-
-const navbar = document.querySelector("header");
-
-window.addEventListener("scroll", function () {
-    if (navbar) {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow =
-                "0 4px 15px rgba(0, 0, 0, 0.08)";
-        } else {
-            navbar.style.boxShadow = "none";
-        }
-    }
+// Update when the page scrolls.
+window.addEventListener("scroll", updateNavbarShadow, {
+    passive: true
 });
 
+// Set the correct shadow on initial page load.
+updateNavbarShadow();
 
-/* 5. WELCOME MESSAGE */
+
+/* 3. WELCOME MESSAGE */
 
 console.log("Welcome to Mapify Marketing!");
 console.log("Strategy. Creativity. Growth!");

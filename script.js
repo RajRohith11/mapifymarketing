@@ -3,6 +3,17 @@
 ================================= */
 
 // 1. INTRO LOADING SCREEN
+
+
+/* Start at the top whenever the page loads */
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", function () {
+    window.scrollTo(0, 0);
+});
+
 window.addEventListener("load", function () {
     const introLoader = document.getElementById("introLoader");
 

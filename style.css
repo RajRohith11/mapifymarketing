@@ -759,3 +759,194 @@ a {
     color: #000;
     transform: translateY(-3px);
 }
+
+/* =================================
+   16. MAPIFY GALLERY PAGE
+================================= */
+
+.gallery-page {
+    min-height: 70vh;
+    background: #ffffff;
+}
+
+.gallery-hero {
+    padding: 75px 25px 85px;
+    text-align: center;
+    background: #101820;
+    color: #ffffff;
+}
+.gallery-hero .section-label {
+    margin-bottom: 18px;
+    color: #d5b45b;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.gallery-hero h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.2;
+}
+.gallery-hero h1 span {
+    color: #C6A15B;
+}
+
+.gallery-hero > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #d2d2d2;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* Gallery mobile layout */
+
+@media (max-width: 768px) {
+    .gallery-hero {
+        padding: 65px 20px;
+    }
+
+    .gallery-hero .section-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .gallery-hero > p:last-child {
+        font-size: 15px;
+    }
+}
+/* =================================
+   17. GALLERY SECTIONS
+================================= */
+
+.gallery-section {
+    padding: 80px 30px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.gallery-section-dark {
+    background: #111111;
+    color: #ffffff;
+}
+
+.gallery-section .section-label {
+    margin-bottom: 12px;
+    color: #bd922f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.gallery-section h2 {
+    margin-bottom: 18px;
+    color: #171717;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+}
+
+.gallery-section h2 span {
+    color: #bd922f;
+}
+
+.gallery-section-dark h2 {
+    color: #ffffff;
+}
+
+.gallery-description {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.gallery-section-dark .gallery-description {
+    color: #d2d2d2;
+}
+
+/* Photo and video grids */
+
+.gallery-grid,
+.document-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1150px;
+    margin: 35px auto 0;
+}
+
+/* Responsive layout */
+
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 60px 20px;
+    }
+
+    .gallery-grid,
+    .document-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .gallery-description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid,
+    .document-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+}
+/* =================================
+   18. GALLERY QUICK NAVIGATION
+================================= */
+
+.gallery-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 20px;
+    background: #F4F1EA;
+    border-bottom: 1px solid #26333D;
+    background: #101820;
+}
+
+.gallery-navigation a {
+    display: inline-block;
+    padding: 11px 22px;
+    border: 1px solid #bd922f;
+    border-radius: 4px;
+    color: #F4F1EA;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.gallery-navigation a:hover,
+.gallery-navigation a:focus-visible {
+    background: #bd922f;
+    color: #111111;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    .gallery-navigation {
+        gap: 10px;
+        padding: 20px 15px;
+    }
+
+    .gallery-navigation a {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}

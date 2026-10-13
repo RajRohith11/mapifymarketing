@@ -1,4 +1,3 @@
-
 /* =================================
    MAPIFY MARKETING - MAIN STYLES
    Brand: Black, White & Gold
@@ -193,7 +192,7 @@ a {
     line-height: 1.2;
 }
 
-.content-section > p:not(.section-tag) {
+.content-section>p:not(.section-tag) {
     max-width: 720px;
     margin: 0 auto 25px;
     color: #666666;
@@ -225,8 +224,8 @@ a {
     border-top: 3px solid #bd922f;
     border-radius: 6px;
     transition: transform 0.3s ease,
-                border-color 0.3s ease,
-                box-shadow 0.3s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .service-card:hover {
@@ -390,7 +389,7 @@ a {
     line-height: 1.8;
 }
 
-.footer-column.company > p {
+.footer-column.company>p {
     margin-bottom: 16px;
 }
 
@@ -734,6 +733,7 @@ a {
         transition-duration: 0.01ms !important;
     }
 }
+
 /* SOCIAL MEDIA CONTACTS */
 .social-links {
     display: flex;
@@ -775,6 +775,7 @@ a {
     background: #101820;
     color: #ffffff;
 }
+
 .gallery-hero .section-label {
     margin-bottom: 18px;
     color: #d5b45b;
@@ -789,11 +790,12 @@ a {
     font-size: clamp(38px, 6vw, 65px);
     line-height: 1.2;
 }
+
 .gallery-hero h1 span {
     color: #C6A15B;
 }
 
-.gallery-hero > p:last-child {
+.gallery-hero>p:last-child {
     max-width: 650px;
     margin: 0 auto;
     color: #d2d2d2;
@@ -813,10 +815,11 @@ a {
         letter-spacing: 2px;
     }
 
-    .gallery-hero > p:last-child {
+    .gallery-hero>p:last-child {
         font-size: 15px;
     }
 }
+
 /* =================================
    17. GALLERY SECTIONS
 ================================= */
@@ -897,12 +900,14 @@ a {
 }
 
 @media (max-width: 480px) {
+
     .gallery-grid,
     .document-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
     }
 }
+
 /* =================================
    18. GALLERY QUICK NAVIGATION
 ================================= */
@@ -928,8 +933,8 @@ a {
     font-size: 14px;
     font-weight: 700;
     transition: background 0.3s ease,
-                color 0.3s ease,
-                transform 0.3s ease;
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .gallery-navigation a:hover,
@@ -948,5 +953,253 @@ a {
     .gallery-navigation a {
         padding: 10px 15px;
         font-size: 13px;
+    }
+}
+
+/* =================================
+   ABOUT PAGE - HERO SECTION
+================================= */
+
+.about-page {
+    min-height: 70vh;
+    background: #ffffff;
+}
+
+.about-hero {
+    padding: 85px 25px;
+    text-align: center;
+    background: #101820;
+    color: #ffffff;
+}
+
+.about-hero .section-label {
+    margin-bottom: 18px;
+    color: #C6A15B;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.about-hero h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: clamp(36px, 6vw, 65px);
+    line-height: 1.2;
+}
+
+.about-hero h1 span {
+    color: #C6A15B;
+}
+
+.about-hero>p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #D2D2D2;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 65px 20px;
+    }
+
+    .about-hero .section-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .about-hero>p:last-child {
+        font-size: 15px;
+    }
+}
+
+/* =================================
+   ABOUT PAGE - INTRODUCTION
+================================= */
+
+.about-intro {
+    padding: 80px 25px;
+    background: #ffffff;
+}
+
+.about-intro-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-intro .section-label,
+.about-value-card .section-label {
+    margin-bottom: 14px;
+    color: #BD922F;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.about-intro h2 {
+    margin-bottom: 25px;
+    color: #101820;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.3;
+}
+
+.about-intro h2 span {
+    color: #C6A15B;
+}
+
+.about-intro-content>p:not(.section-label) {
+    margin-bottom: 18px;
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =================================
+   ABOUT PAGE - MISSION & VISION
+================================= */
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    padding: 70px 30px;
+    background: #101820;
+}
+
+.about-value-card {
+    max-width: 550px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 30px;
+    background: #ffffff;
+    border: 1px solid #E5DCCB;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.about-value-card h3 {
+    margin-bottom: 16px;
+    color: #101820;
+    font-size: 27px;
+}
+
+.about-value-card>p:last-child {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+    .about-intro {
+        padding: 60px 20px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 50px 20px;
+    }
+
+    .about-value-card {
+        padding: 32px 22px;
+    }
+}
+/* =================================
+   ABOUT PAGE - WHY CHOOSE US
+================================= */
+
+.why-choose-us {
+    padding: 80px 30px;
+    background: #101820;
+    text-align: center;
+}
+
+.why-choose-us > .section-label {
+    margin-bottom: 14px;
+    color: #C6A15B;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.why-choose-us h2 {
+    margin-bottom: 18px;
+    color: #FFFFFF;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.3;
+}
+
+.why-choose-us h2 span {
+    color: #C6A15B;
+}
+
+.why-choose-description {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #D2D2D2;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.why-choose-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1150px;
+    margin: 40px auto 0;
+}
+
+.why-choose-card {
+    padding: 35px 25px;
+    background: #FFFFFF;
+    border: 1px solid #C6A15B;
+    border-radius: 8px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.why-choose-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(198, 161, 91, 0.15);
+}
+
+.why-choose-icon {
+    margin-bottom: 18px;
+    color: #C6A15B;
+    font-size: 36px;
+    line-height: 1.2;
+}
+
+.why-choose-card h3 {
+    margin-bottom: 14px;
+    color: #101820;
+    font-size: 22px;
+}
+
+.why-choose-card p {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 768px) {
+    .why-choose-us {
+        padding: 60px 20px;
+    }
+
+    .why-choose-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        max-width: 450px;
+    }
+
+    .why-choose-card {
+        padding: 30px 22px;
     }
 }
